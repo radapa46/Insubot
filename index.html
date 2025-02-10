@@ -52,11 +52,18 @@
         if (users[user] && users[user] === pass) {
             document.getElementById("login-container").style.display = "none";
             document.getElementById("chat-container").style.display = "block";
+
+            // Detectar si el usuario está en un móvil
+            if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+                // Redirigir a OpenAI en móviles
+                window.location.href = "https://chatgpt.com/g/g-67a39b193a748191910c0e23a784c706-insubot";
+            }
         } else {
             document.getElementById("error-message").innerText = "Usuario o contraseña incorrectos.";
         }
     }
 </script>
+
 
 </body>
 </html>
